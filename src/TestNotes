@@ -1,0 +1,23 @@
+- Structural Test
+Sono state testate tutte le classi dove possibile, ottenendo un'ottima percentuale di copertura abbassata dalla presenza 
+di funzioni di interfaccia. Infatti non è stato effettuato il testing per: la classe "Window" in quanto completamente di interfaccia; 
+e, ovviamente, la classe "Main" che inizializza l'interfaccia e crea gli oggetti necessari all'applicazione per funzionare .  
+Inoltre, risulta essere coperta solo al 92,9% la classe 'FileType'. Questo è dovuto ad un problema di EclEmma,  che per qualche 
+motivo segna la prima riga in 'giallo', come se non fosse stato coperto un branch nonostante quella riga contenta solo '/*' , 
+l'inizio di un commento. Infatti in realtà la classe è totalmente coperta, anche perché si tratta solo di una riga dove si definiscono 
+gli enum. Tutte le altre classi raggiungono il 100% di coverage.
+Per permettere il testing, è stata creata una classe di supporto 'DatabaseCreator' ( nella cartella 'util' ) utile a creare e 
+distruggere un nuovo database. Essa è utilizzata in molte funzioni di test, così da poter partire da un database vuoto.  
+Per questo, essa non viene testata ed inoltre ha una coverage del 21,4% in quanto contiene funzioni utili al testing funzionale e 
+non vengono coperte le eccezzioni.
+
+- Functional test
+Sono stati testati tutti gli UC e relativi scenari principali. 
+A causa della presenza dell'interfaccia, il testing non è stato banale. 
+Ci si serve di 'DatabaseCreator' per creare e riempire un database di supporto al testing ed inoltre è stato necessario aggiungere 
+alcune funzioni pubbliche alla classe 'Main' per poter comunicare con l'interfaccia.
+La coverage risulta essere:
+- Instructions  83,4%
+- Branches 62,6%
+Questo a causa del fatto che questo progetto è solo una parte, un pezzo di un progetto più grande e presenta delle funzioni utili 
+per interfacciarsi con il resto del progetto. Inoltre non vengono coperti i branch delle eccezioni.
