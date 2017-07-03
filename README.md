@@ -3,7 +3,7 @@
 # Implementation
 
 Per l'importazione del progetto in Eclipse è necessario: 
-1. Importare il progetto (Import Projects from File System or Archive);
+1. Importare il progetto (Import Projects from folder or Archive);
 2. Aggiungere la libreria JUNIT4  (aprire le Proprieties -> Java Build Path -> Libraries -> Add Library... -> JUnit)
 
 # Testing
